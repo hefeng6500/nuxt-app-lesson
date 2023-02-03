@@ -20,7 +20,7 @@ export default defineNuxtPlugin((nuxtApp) => {
         body: data,
         async onRequest({ request, options }) {
           // Log request
-          console.log("[fetch request]", request, options);
+          // console.log("[fetch request]", request, options);
 
           // Add `?t=1640125211170` to query search params
           options.query = params || {};
@@ -28,26 +28,26 @@ export default defineNuxtPlugin((nuxtApp) => {
         },
         async onRequestError({ request, options, error }) {
           // Log error
-          console.log("[fetch request error]", request, error);
+          // console.log("[fetch request error]", request, error);
         },
         async onResponse({ request, response, options }) {
           // Log response
-          console.log(
-            "[fetch response]",
-            request,
-            response.status,
-            response.body
-          );
+          // console.log(
+          //   "[fetch response]",
+          //   request,
+          //   response.status,
+          //   response.body
+          // );
           resolve(response);
         },
         async onResponseError({ request, response, options }) {
           // Log error
-          console.log(
-            "[fetch response error]",
-            request,
-            response.status,
-            response.body
-          );
+          // console.log(
+          //   "[fetch response error]",
+          //   request,
+          //   response.status,
+          //   response.body
+          // );
           reject(response);
         },
       });

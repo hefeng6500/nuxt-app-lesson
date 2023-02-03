@@ -1,11 +1,10 @@
-import ElementPlus from "unplugin-element-plus/vite";
-
-// https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
-  css: ["element-plus/dist/index.css"],
-  vite: {
-    plugins: [ElementPlus()],
+  rootDir: __dirname,
+  nitro: {
+    preset: "aws-lambda",
+    serveStatic: true,
   },
-  // auto import components
-  components: true,
+  app: {
+    cdnURL: "http://192.168.1.7:9090/",
+  },
 });
